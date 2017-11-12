@@ -37,7 +37,7 @@ def create_dataset(a, look_back):
     dataY = np.reshape(dataY, (len(dataY),1))
     return np.array(dataX), np.array(dataY)
 
-data = pd.read_csv('/Users/rakshitanagalla/Desktop/Acad/PRML/project/Recent_toBeUsed.csv')
+data = pd.read_csv('Recent_toBeUsed.csv')
 data.drop(['ln_e','YearMonth','Unnamed: 4', 'y', 'y_US','m_in_billion_rupees', 'm_US_in billion rupees','m_in_billion_rupees.1','i', 'i_US','m_US_in billion', 'Dummy', 'Dummy2'],inplace=True,axis=1)
 DTTMFormat = '%d-%m-%Y'
 data['DTTM'] = pd.to_datetime(data['DTTM'],format=DTTMFormat)
